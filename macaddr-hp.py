@@ -132,6 +132,7 @@ print()
 # create an empty dictionary to hold the mac-IP data
 Mac_IP = {}
 IP_Data = ''
+device_name = 'Not Found'
 # create an empty list to hold MAC addresses for hashing
 hash_list = []
 # open the json created by arp.py if it exists
@@ -183,7 +184,7 @@ while counter <= ct:
 #    if line.find('Port Address Table'):
     if IP.find('Port Address Table') != -1:
 #   Remove the Status and Counters text.
-        IP = IP.replace(' Status and Counters - ','')
+        IP = IP.replace('Status and Counters - ','')
         L = str.split(IP)
         Interface_Num = L[4]
         Vlan = ''
@@ -191,10 +192,10 @@ while counter <= ct:
         Mac = ''
         manufacture = ''
     else:
-# extract MAC Address and save to hash_list for hashing
         L = str.split(IP)
         Mac = L[0]
         Vlan = L[1]
+        Vlan = Vlan.replace(',...','')
         temp = hash_list.append(Mac)
         if Mac in Mac_IP:
             IP_Data = Mac_IP[Mac]
