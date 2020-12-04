@@ -17,7 +17,7 @@ sh mac-address 14
 
 and create a list of Vlan, Mac Address, interface and manufacturer.
 
-Number of Entries: 4 
+Number of Entries: 4
 
 Vlan   MAC Address       Interface   Vendor
 --------------------------------------------------
@@ -155,8 +155,8 @@ else:
 try:
     f = open(mydatafile, 'r')
 except FileNotFoundError as fnf_error:
-            print(fnf_error)
-            sys.exit(0)
+        print(fnf_error)
+        sys.exit(0)
 else:
     for line in f:
         match_PC = re.search(r'([0-9A-F]{2}[-:]){5}([0-9A-F]{2})', line, re.I)
@@ -168,7 +168,7 @@ else:
         device_name_loc = line.find('#')
         if device_name_loc != -1:
             device_name = line[0:device_name_loc]
-            device_name = device_name.strip()   
+            device_name = device_name.strip()
     f.close
 ct = len(data)-1
 counter = 0
@@ -200,7 +200,7 @@ while counter <= ct:
         if Mac in Mac_IP:
             IP_Data = Mac_IP[Mac]
         else:
-            IP_Data = 'No Match'
+            IP_Data = 'No-Match'
 # print the pinginfo data
         print(IP_Data, Mac)
 # pull the manufacturer with manuf
