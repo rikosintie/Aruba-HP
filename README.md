@@ -11,7 +11,7 @@ This is a re-write of the ARP-Sort and MAC2Manuf tools I wrote for Cisco switche
 
 An Aruba-HP switch running a routing protocol maintains an "ARP-table" that maps a device's mac address to it's IP address. Here is a sample output:
 sh arp
-```
+```powershell
  IP ARP table
 
   IP Address       MAC Address       Type    Port
@@ -85,7 +85,7 @@ python3 arp-hp.py
 ## Results
 
 The script will strip off everyting except the IP address and MAC address.
-```
+```powershell
 Number of IP, MAC and Manufacture: 971 
 
 10.10.1.4 000463-0a9be7 BoschSec
@@ -138,7 +138,7 @@ python3 macaddr-hp.py
 
 ## Results
 
-```
+```powershell
 Device Name: test-2920-48 
 PingInfo Data
 10.10.26.52 3417eb-ba532f
